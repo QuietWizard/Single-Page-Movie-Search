@@ -1,0 +1,97 @@
+/* ==========================================================================
+   General Styles
+========================================================================== */
+
+.container {
+	width: 100%; /* Override Bootstrap Container Style */
+}
+
+/* ==========================================================================
+   Nav Styles
+========================================================================== */
+
+/* ==========================================================================
+   Jumbotron Styles
+========================================================================== */
+.jumbotron h1 {
+	padding:10px 0 20px;
+}
+
+.jumbotron form {
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
+/* ==========================================================================
+   Main Content Styles
+========================================================================== */
+.container .row {
+   margin: 0 auto;
+}
+.w150 {
+   width: 180px;
+   height: 300px;
+}
+.w150 img {
+   width: 150px;
+   height: 225px;
+}
+
+.overlay {
+   display: block;
+   position: relative;
+   width: 150px;
+   height: 225px;
+   background: rgba(0, 0, 0, 0.8);
+   margin-top: -225px;
+   padding-top: 60px;
+   text-align: center;
+   color: #fff;
+   overflow: hidden;
+   z-index: 20;
+   opacity: 0;
+   -webkit-transition: opacity 0.25s ease-in-out;
+   -moz-transition: opacity 0.25s ease-in-out;
+   -o-transition: opacity 0.25s ease-in-out;
+   transition: opacity 0.25s ease-in-out;
+}
+
+.overlay:hover {
+   opacity: 1;
+} 
+
+@media(max-width: 768px){
+   .w150 {
+      max-width: 750px;
+      width: 100%;
+      margin: 0 auto;
+   }
+   .row img {
+      width: 150px;
+      margin: 0 auto;
+   }
+   .overlay {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+   }
+   .movie-title {
+      max-width: 150px;
+      margin: 0 auto;
+   }
+}
+/* ==========================================================================
+   Footer Styles
+ ========================================================================== */
+.footer-padding {
+   height: 60px;
+}
+
+footer {
+   	position: fixed;
+   	bottom: 0px;
+   	padding: 20px;
+   	width: 100%;
+   	height: 60px;
+   	background-color: #f5f5f5;
+}

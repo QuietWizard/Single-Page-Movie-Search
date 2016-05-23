@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <title>Single Page Movie Search</title>
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="css/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/vendor/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body ng-controller="movieSearchCtrl">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Single Page Movie Search</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for Search Input & Options -->
+    <div class="jumbotron">
+      <div class="container text-center">
+        <h1>Enter a Movie Title</h1>
+        <form ng-submit="search()" class="input-group input-group-lg">
+          <input ng-model="query" type="text" class="form-control" placeholder="Enter Movie Title Here">
+        </form>
+        <p class="btn btn-primary btn-lg" ng-click="search()" role="button">Search Movies &raquo;</p>
+      </div><!-- /container -->
+    </div><!-- /jumbotron -->
+
+    <!-- List of Movie Results -->
+    <div class="container">
+      <div class="row">
+        <!-- Filtered Template Repeat -->
+        <div ng-repeat="item in movies">
+          <div class="col-lg-3 col-md-4 col-xs-12 center-block w150">
+            <p><img ng-src="https://image.tmdb.org/t/p/w185/{{item.poster_path}}" class="img-responsive"><span class="overlay">Release Date:<br>{{item.release_date}}<br><br>Average Vote:<br>{{item.vote_average}}</span></p>
+            <p class="movie-title">{{item.title}}</p>
+          </div>
+        </div>
+      </div> <!-- /row -->
+    </div> <!-- /container -->
+
+    <div class="footer-padding clearfix"></div>
+
+    <footer>
+      <div class="container">
+        <p class="text-muted">&copy; Michael Foss 2016</p>
+      </div><!-- /container -->
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="js/vendor/jquery-1.11.2.js"></script>
+    <script src="js/vendor/angular/angular.js"></script>
+    <script src="js/vendor/angular/angular-resource.js"></script>
+    <script src="js/vendor/angular/angular-sanitize.js"></script>
+    <script src="js/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="js/scripts/controller.js"></script>
+    <script src="js/scripts/main.js"></script>
+</body>
+</html>
